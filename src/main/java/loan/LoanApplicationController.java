@@ -15,7 +15,7 @@ import loan.data.LoanApplication;
 @RestController
 public class LoanApplicationController {
 
-	@RequestMapping(path = "/loan", method = RequestMethod.POST)
+	@RequestMapping(path = "/applyForLoan", method = RequestMethod.GET)
 	public LoanApplication requestLoan(@RequestParam(value = "amount") Double amount,
 			@RequestParam(value = "term") Integer term, @RequestParam(value = "name") String name,
 			@RequestParam(value = "surname") String surname, @RequestParam(value = "personalID") String personalID,
@@ -23,7 +23,7 @@ public class LoanApplicationController {
 		return Loans.createLoanApplication(amount, term, name, surname, personalID, request.getRemoteAddr());
 	}
 
-	@RequestMapping(path = "/loan", method = RequestMethod.GET)
+	@RequestMapping(path = "/listLoans", method = RequestMethod.GET)
 	public List<LoanApplication> listLoanApplications(
 			@RequestParam(value = "personalID", defaultValue = "") String personalID) {
 		return Loans.getApplications(personalID);
