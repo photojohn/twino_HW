@@ -1,3 +1,4 @@
 # twino_HW
-Required Postgress DB. I used last stable version.
-Create DB user twino with a password twino
+Required Postgresql DB. I used version 9.5.4.
+
+Create DB user twino with a password twino and run DB script "dbScripts/twino.sql" to create structure and some data.
